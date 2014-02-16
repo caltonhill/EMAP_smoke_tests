@@ -9,6 +9,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+
+//  This Test was created in Selenium IDE and then exported as Java/Junit
+
 public class RwSubscriberLoginThroughBarrier {
     private WebDriver driver;
     private String baseUrl;

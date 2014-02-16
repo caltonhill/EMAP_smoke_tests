@@ -9,6 +9,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+//  This Test was created in Selenium IDE and then exported as Java/Junit
+
 public class HsjSubscriberLoginThroughBarrier {
     private WebDriver driver;
     private boolean acceptNextAlert = true;
