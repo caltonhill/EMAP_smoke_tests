@@ -1,4 +1,4 @@
-package jamestests.search_available;
+package jamestests.search_results_displayed;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -22,7 +22,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Macdonald on 12/02/14.
  */
-public class SearchConNews {
+public class SearchHSJ {
     private static WebDriver driver;
 
     @BeforeClass
@@ -32,8 +32,8 @@ public class SearchConNews {
     }
 
     @Test
-    public void searchCN(){
-        driver.get("http://www.cnplus.co.uk");
+    public void searchHSJ(){
+        driver.get("http://www.hsj.co.uk");
         //locate search box
         WebElement searchBox = driver.findElement(By.cssSelector("div[id='mastsearch'] input[id='qkeyword']"));
         //clear search box (not really necessary but just in case)
@@ -72,10 +72,15 @@ public class SearchConNews {
         List <WebElement> numSearchResults = driver.findElements(By.cssSelector("ul[id='results_list'] > li > h3"));
             assertEquals(10,numSearchResults.size());
 
-        //Expects number of right-hand search filters to equal 3
+        //Expects number of right-hand search filters to equal 5
         List <WebElement> filterSections = driver.findElements(By.cssSelector(
                 "div[id='filter_sleeve'] > div[class='filter_box']"));
-            assertEquals(3,filterSections.size());
+            assertEquals(5,filterSections.size());
+
+        //Checks for HSJ Local results tab
+        WebElement hsjLocalTab = driver.findElement(By.cssSelector(
+                "div[id='results_tabs'] li > span > a[href$='tabtoshow=custom']"));
+        assertThat(hsjLocalTab.getText().toLowerCase(),is("hsj local"));
 
     }
 

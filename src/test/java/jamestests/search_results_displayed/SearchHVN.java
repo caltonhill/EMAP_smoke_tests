@@ -1,6 +1,5 @@
-package jamestests.search_available;
+package jamestests.search_results_displayed;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -12,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.Matchers.is;
@@ -22,7 +22,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Macdonald on 12/02/14.
  */
-public class SearchArchJournal {
+public class SearchHVN {
     private static WebDriver driver;
 
     @BeforeClass
@@ -32,8 +32,8 @@ public class SearchArchJournal {
     }
 
     @Test
-    public void searchAJ(){
-        driver.get("http://www.architectsjournal.co.uk");
+    public void searchHVN(){
+        driver.get("http://www.hvnplus.co.uk");
         //locate search box
         WebElement searchBox = driver.findElement(By.cssSelector("div[id='mastsearch'] input[id='qkeyword']"));
         //clear search box (not really necessary but just in case)
@@ -72,10 +72,10 @@ public class SearchArchJournal {
         List <WebElement> numSearchResults = driver.findElements(By.cssSelector("ul[id='results_list'] > li > h3"));
             assertEquals(10,numSearchResults.size());
 
-        //Expects number of right-hand search filters to equal 3
+        //Expects number of right-hand search filters to equal 2
         List <WebElement> filterSections = driver.findElements(By.cssSelector(
                 "div[id='filter_sleeve'] > div[class='filter_box']"));
-            assertEquals(3,filterSections.size());
+            assertEquals(2,filterSections.size());
 
     }
 

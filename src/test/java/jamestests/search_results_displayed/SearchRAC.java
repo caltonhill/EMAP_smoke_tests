@@ -1,4 +1,4 @@
-package jamestests.search_available;
+package jamestests.search_results_displayed;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -22,7 +22,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Macdonald on 12/02/14.
  */
-public class SearchArchReview {
+public class SearchRAC {
     private static WebDriver driver;
 
     @BeforeClass
@@ -32,8 +32,8 @@ public class SearchArchReview {
     }
 
     @Test
-    public void searchAR(){
-        driver.get("http://www.architectural-review.com");
+    public void searchRAC(){
+        driver.get("http://www.racplus.com");
         //locate search box
         WebElement searchBox = driver.findElement(By.cssSelector("div[id='mastsearch'] input[id='qkeyword']"));
         //clear search box (not really necessary but just in case)
@@ -73,7 +73,6 @@ public class SearchArchReview {
             assertEquals(10,numSearchResults.size());
 
         //Expects number of right-hand search filters to equal 2
-        //NB. At time of writing test no "Month" filter on AR.  Missing??
         List <WebElement> filterSections = driver.findElements(By.cssSelector(
                 "div[id='filter_sleeve'] > div[class='filter_box']"));
             assertEquals(2,filterSections.size());

@@ -1,4 +1,4 @@
-package jamestests.search_available;
+package jamestests.search_results_displayed;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -22,7 +22,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Macdonald on 12/02/14.
  */
-public class SearchLGC {
+public class SearchRetailWeek {
     private static WebDriver driver;
 
     @BeforeClass
@@ -32,8 +32,8 @@ public class SearchLGC {
     }
 
     @Test
-    public void searchLGC(){
-        driver.get("http://www.lgcplus.com");
+    public void searchRetailWeek(){
+        driver.get("http://www.retail-week.com");
         //locate search box
         WebElement searchBox = driver.findElement(By.cssSelector("div[id='mastsearch'] input[id='qkeyword']"));
         //clear search box (not really necessary but just in case)
@@ -72,10 +72,10 @@ public class SearchLGC {
         List <WebElement> numSearchResults = driver.findElements(By.cssSelector("ul[id='results_list'] > li > h3"));
             assertEquals(10,numSearchResults.size());
 
-        //Expects number of right-hand search filters to equal 4
+        //Expects number of right-hand search filters to equal 5
         List <WebElement> filterSections = driver.findElements(By.cssSelector(
                 "div[id='filter_sleeve'] > div[class='filter_box']"));
-            assertEquals(4,filterSections.size());
+            assertEquals(5,filterSections.size());
 
     }
 

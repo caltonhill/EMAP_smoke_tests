@@ -1,4 +1,4 @@
-package jamestests.search_available;
+package jamestests.search_results_displayed;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -22,7 +22,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Macdonald on 12/02/14.
  */
-public class SearchNursingTimes {
+public class SearchArchReview {
     private static WebDriver driver;
 
     @BeforeClass
@@ -32,8 +32,8 @@ public class SearchNursingTimes {
     }
 
     @Test
-    public void searchNursingTimes(){
-        driver.get("http://www.nursingtimes.net");
+    public void searchAR(){
+        driver.get("http://www.architectural-review.com");
         //locate search box
         WebElement searchBox = driver.findElement(By.cssSelector("div[id='mastsearch'] input[id='qkeyword']"));
         //clear search box (not really necessary but just in case)
@@ -72,15 +72,11 @@ public class SearchNursingTimes {
         List <WebElement> numSearchResults = driver.findElements(By.cssSelector("ul[id='results_list'] > li > h3"));
             assertEquals(10,numSearchResults.size());
 
-        //Expects number of right-hand search filters to equal 5
+        //Expects number of right-hand search filters to equal 2
+        //NB. At time of writing test no "Month" filter on AR.  Missing??
         List <WebElement> filterSections = driver.findElements(By.cssSelector(
                 "div[id='filter_sleeve'] > div[class='filter_box']"));
-            assertEquals(5,filterSections.size());
-
-        //Checks for Forums results tab
-        WebElement ntForumsTab = driver.findElement(By.cssSelector(
-                "div[id='results_tabs'] li > span > a[href$='tabtoshow=forum']"));
-        assertThat(ntForumsTab.getText().toLowerCase(),is("forums"));
+            assertEquals(2,filterSections.size());
 
     }
 
