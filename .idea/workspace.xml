@@ -2,20 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0649d415-8491-49f2-9404-03b893d42850" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchArchJournal.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchArchJournal.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchArchReview.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchArchReview.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchConNews.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchConNews.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchDrapers.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchDrapers.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchHSJ.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchHSJ.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchHVN.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchHVN.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchLGC.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchLGC.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchLighting.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchLighting.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchMRW.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchMRW.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchNCE.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchNCE.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchNursingTimes.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchNursingTimes.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchRAC.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchRAC.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchRetailJeweller.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchRetailJeweller.java" />
-      <change type="MOVED" beforePath="C:\Users\Macdonald\Documents\GitHub\EMAP_smoke_tests\src\test\java\jamestests\search_available\SearchRetailWeek.java" afterPath="$PROJECT_DIR$/src/test/java/jamestests/search_results_displayed/SearchRetailWeek.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="EMAP_smoke_tests.iws" />
@@ -79,7 +65,17 @@
     <favorites_list name="EMAP_smoke_tests" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="RW_NewsletterSignUp.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/jamestests/email_newsletter_signup/RW_NewsletterSignUp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="0" selection-start="3408" selection-end="3408" vertical-scroll-proportion="0.4225352" vertical-offset="899" max-vertical-offset="1649">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -142,6 +138,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -177,6 +174,44 @@
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jamestests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EMAP_smoke_tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EMAP_smoke_tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jamestests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="email_newsletter_signup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -198,7 +233,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -532,12 +566,16 @@
       <created>1392565482270</created>
       <updated>1392565482270</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactored package name. Starting on newsletter signup tests.&#10;">
+      <created>1394305779216</created>
+      <updated>1394305779217</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -549,19 +587,19 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.65974027" sideWeight="0.1" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22857143" sideWeight="0.9" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22857143" sideWeight="0.9" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -578,7 +616,8 @@
     </option>
     <MESSAGE value="Initial Commit to create Repository" />
     <MESSAGE value="Added comments to some tests&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments to some tests&#10;" />
+    <MESSAGE value="Refactored package name. Starting on newsletter signup tests.&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored package name. Starting on newsletter signup tests.&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -717,7 +756,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/jamestests/email_newsletter_signup/RW_NewsletterSignUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="12" selection-start="4273" selection-end="4273" vertical-scroll-proportion="2.8133802" vertical-offset="0" max-vertical-offset="1700" />
+        <state line="82" column="0" selection-start="3408" selection-end="3408" vertical-scroll-proportion="0.4225352" vertical-offset="899" max-vertical-offset="1649">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
