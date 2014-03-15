@@ -21,138 +21,168 @@ import static org.junit.Assert.assertThat;
  */
 public class VerifyAllHomepagesOnFirstServer {
     private static WebDriver driver;
+    private static WebDriverWait wait;
 
     @BeforeClass
     public static void createDriver(){
         driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver,10,20);
     }
 
     @Test
     public void canVerifyAjHomepageOnFirstServer (){
         driver.get("http://architectslive1.architectsjournal.co.uk");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains("Architect"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                    "div[id='colmain']")));
+        
         WebElement AjNavLink = driver.findElement
                 (By.cssSelector("a[href='http://architectslive1.architectsjournal.co.uk/buildings/']"));
-        assertThat(AjNavLink.getText(),is ("Buildings"));
+        
+        assertThat(AjNavLink.getText().toLowerCase(),is ("buildings"));
     }
     @Test
     public void canVerifyArHomepageOnFirstServer (){
         driver.get("http://arlive1.architectural-review.com");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains(""));
-        WebElement ArSpinblockTitle = driver.findElement
-                (By.cssSelector("div[class='column columnTwo'] div[class='colour2'] div[class='sectionhead_sleeve'] h2"));
-        assertThat(ArSpinblockTitle.getText(),is ("PUBLIC EVENTS"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                "div[id='colmain']")));
+
+        WebElement ArBuildingsNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] a[href='http://arlive1.architectural-review.com/buildings/']"));
+
+        assertThat(ArBuildingsNavItem.getText().toLowerCase(),is("buildings"));
     }
     @Test
     public void canVerifyCnHomepageOnFirstServer (){
         driver.get("http://cnlive1.cnplus.co.uk");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains("Construction"));
-        WebElement CnSpinblockTitle = driver.findElement
-                (By.cssSelector("div[class='grid'] > div[class='oneColumn'] div[class='slideshow slideshowStyle2'] h2"));
-        assertThat(CnSpinblockTitle.getText(),is ("TOP STORIES"));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                "div[id='colmain']")));
+        
+        WebElement CnSpinblockTitle = driver.findElement(By.cssSelector(
+                "div[class='grid'] > div[class='oneColumn'] div[class='slideshow slideshowStyle2'] h2"));
+        
+        assertThat(CnSpinblockTitle.getText().toLowerCase(),is ("top stories"));
     }
     @Test
     public void canVerifyDrHomepageOnFirstServer (){
         driver.get("http://draperslive1.drapersonline.com");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains(""));
-        WebElement DrSpinblockTitle = driver.findElement
-                (By.cssSelector("div[class='grid'] > div[class='oneColumn'] div[class='slideshow slideshowStyle2'] h2"));
-        assertThat(DrSpinblockTitle.getText(),containsString("News"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                "div[id='colmain']")));
+        
+        WebElement DrSpinblockTitle = driver.findElement(By.cssSelector(
+                "div[class='grid'] > div[class='oneColumn'] div[class='slideshow slideshowStyle2'] h2"));
+        
+        assertThat(DrSpinblockTitle.getText().toLowerCase(),containsString("news"));
     }
     @Test
     public void canVerifyHsjHomepageOnFirstServer (){
         driver.get("http://hsjlive1.hsj.co.uk");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains("HSJ"));
-        WebElement HsjNewsNavItem = driver.findElement
-                (By.cssSelector("div[id='mainnav_sleeve'] > ul > li > a[href='http://hsjlive1.hsj.co.uk/news/']"));
-        assertThat(HsjNewsNavItem.getText(),is("NEWS"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                "div[id='colmain']")));
+        
+        WebElement HsjNewsNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] > ul > li > a[href='http://hsjlive1.hsj.co.uk/news/']"));
+        
+        assertThat(HsjNewsNavItem.getText().toLowerCase(),is("news"));
     }
     @Test
     public void canVerifyHvnHomepageOnFirstServer (){
         driver.get("http://hvnlive1.hvnplus.co.uk");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains(""));
-        WebElement HvnNewsNavItem = driver.findElement
-                (By.cssSelector("div[id='mainnav_sleeve'] > ul > li > a[href='http://hvnlive1.hvnplus.co.uk/news/']"));
-        assertThat(HvnNewsNavItem.getText(),is("NEWS"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                    "div[id='colmain']")));
+
+        WebElement HvnNewsNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] > ul > li > a[href='http://hvnlive1.hvnplus.co.uk/news/']"));
+        
+        assertThat(HvnNewsNavItem.getText().toLowerCase(),is("news"));
     }
     @Test
     public void canVerifyLgcHomepageOnFirstServer (){
         driver.get("http://lgclive1.lgcplus.com");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains("Government"));
-        WebElement LgcJobsNavItem = driver.findElement
-                (By.cssSelector("div[id='mainnav_sleeve'] > ul > li > a[href='http://www.lgcjobs.com/']"));
-        assertThat(LgcJobsNavItem.getText(),is("JOBS"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                    "div[id='colmain']")));
+
+        WebElement LgcJobsNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] > ul > li > a[href='http://www.lgcjobs.com/']"));
+        
+        assertThat(LgcJobsNavItem.getText().toLowerCase(),is("jobs"));
     }
     @Test
-         public void canVerifyLightingHomepageOnFirstServer (){
+    public void canVerifyLightingHomepageOnFirstServer (){
         driver.get("http://lightinglive1.lighting.co.uk");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains("Lighting"));
-        WebElement LightingNewsNavItem = driver.findElement
-                (By.cssSelector("div[id='mainnav_sleeve'] > ul > li > a[href='http://lightinglive1.lighting.co.uk/news/']"));
-        assertThat(LightingNewsNavItem.getText(),is("NEWS"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                    "div[id='colmain']")));
+
+        WebElement LightingNewsNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] > ul > li > a[href='http://lightinglive1.lighting.co.uk/news/']"));
+        
+        assertThat(LightingNewsNavItem.getText().toLowerCase(),is("news"));
     }
     @Test
     public void canVerifyMrwHomepageOnFirstServer (){
         driver.get("http://mrwlive1.mrw.co.uk");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains("Recycling"));
-        WebElement MrwNewsNavItem = driver.findElement
-                (By.cssSelector("div[id='mainnav_sleeve'] > ul > li > a[href='http://mrwlive1.mrw.co.uk/news/']"));
-        assertThat(MrwNewsNavItem.getText(),is("News"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                    "div[id='colmain']")));
+
+        WebElement MrwNewsNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] > ul > li > a[href='http://mrwlive1.mrw.co.uk/news/']"));
+
+        assertThat(MrwNewsNavItem.getText().toLowerCase(),is("news"));
     }
     @Test
     public void canVerifyNceHomepageOnFirstServer (){
         driver.get("http://ncelive1.nce.co.uk");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains(""));
-        WebElement NceNewsNavItem = driver.findElement
-                (By.cssSelector("div[id='mainnav_sleeve'] > ul > li > a[href='http://ncelive1.nce.co.uk/news/']"));
-        assertThat(NceNewsNavItem.getText(),is("NEWS"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                    "div[id='colmain']")));
+
+        WebElement NceNewsNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] > ul > li > a[href='http://ncelive1.nce.co.uk/news/']"));
+
+        assertThat(NceNewsNavItem.getText().toLowerCase(),is("news"));
     }
     @Test
     public void canVerifyNtHomepageOnFirstServer (){
         driver.get("http://nursinglive1.nursingtimes.net");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains("Nursing"));
-        WebElement NtPracticeNavItem = driver.findElement
-                (By.cssSelector("div[id='mainnav_sleeve'] > ul > li > a[href='http://nursinglive1.nursingtimes.net/nursing-practice/']"));
-        assertThat(NtPracticeNavItem.getText(),containsString("PRACTICE"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                    "div[id='colmain']")));
+
+        WebElement NtPracticeNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] > ul > li > a[href='http://nursinglive1.nursingtimes.net/nursing-practice/']"));
+
+        assertThat(NtPracticeNavItem.getText().toLowerCase(),containsString("practice"));
     }
     @Test
     public void canVerifyRacHomepageOnFirstServer (){
         driver.get("http://raclive1.racplus.com");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains("RAC"));
-        WebElement RacNewsNavItem = driver.findElement
-                (By.cssSelector("div[id='mainnav_sleeve'] > ul > li > a[href='http://raclive1.racplus.com/news/']"));
-        assertThat(RacNewsNavItem.getText(),is("NEWS"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                    "div[id='colmain']")));
+
+        WebElement RacNewsNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] > ul > li > a[href='http://raclive1.racplus.com/news/']"));
+
+        assertThat(RacNewsNavItem.getText().toLowerCase(),is("news"));
     }
     @Test
     public void canVerifyRjHomepageOnFirstServer (){
         driver.get("http://rjlive1.retail-jeweller.com");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains("Jewel"));
-        WebElement RjProductsNavItem = driver.findElement
-                (By.cssSelector("div[id='mainnav_sleeve'] > ul > li > a[href='http://rjlive1.retail-jeweller.com/products/']"));
-        assertThat(RjProductsNavItem.getText(),is("PRODUCTS"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                    "div[id='colmain']")));
+
+        WebElement RjProductsNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] > ul > li > a[href='http://rjlive1.retail-jeweller.com/products/']"));
+
+        assertThat(RjProductsNavItem.getText().toLowerCase(),is("products"));
     }
+
     @Test
     public void canVerifyRwHomepageOnFirstServer (){
         driver.get("http://retaillive1.retail-week.com");
-        new WebDriverWait(driver,10,300).until(
-                ExpectedConditions.titleContains("retail"));
-        WebElement RwCompaniesNavItem = driver.findElement
-                (By.cssSelector("div[id='mainnav_sleeve'] > ul > li > a[href='http://retaillive1.retail-week.com/companies/']"));
-        assertThat(RwCompaniesNavItem.getText(),is("Companies"));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                    "div[id='colmain']")));
+
+        WebElement RwCompaniesNavItem = driver.findElement(By.cssSelector(
+                "div[id='mainnav_sleeve'] > ul > li > a[href='http://retaillive1.retail-week.com/companies/']"));
+
+        assertThat(RwCompaniesNavItem.getText().toLowerCase(),is("companies"));
     }
 
 
