@@ -40,9 +40,48 @@ public class RegUserLoginRetailWeek {
     }
 
     @Before
-    public void setUpTests(){
+    public void loginAsRegUserToSetUpTests(){
 
         driver.get(baseURL);
+
+        assertThat(driver.getCurrentUrl(),is(baseURL));
+
+        String mainWindowHandle = driver.getWindowHandle();
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                "div[id='colmain']")));
+        rwBottomNavItem = driver.findElement(By.cssSelector(
+                "li > a[href='http://www.retail-week.com/terms-and-conditions/']"));
+        assertThat(rwBottomNavItem.getText().toLowerCase(),containsString("conditions"));
+
+        signInLink = driver.findElement(By.partialLinkText(
+                "Sign"));
+        signInLink.click();
+
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("wvPopupIframe")));
+
+        emailField = driver.findElement(By.cssSelector("input[id='SIemail']"));
+        emailField.clear();
+        emailField.sendKeys("jamestest4@freeolamail.com");
+
+        pwordField = driver.findElement(By.id("passWord"));
+        pwordField.clear();
+        pwordField.sendKeys("password");
+
+        assertTrue(driver.findElement(By.id("SIRememUserName")).isSelected());
+
+        loginButton = driver.findElement(By.id("LoginButton"));
+        loginButton.click();
+
+        assertTrue(driver.getWindowHandle().contentEquals(mainWindowHandle));
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
+                "a[class$='loggedIn']")));
+
+        assertTrue(driver.findElement(By.cssSelector(
+                "a[class$='loggedIn']")).isDisplayed());
+
+
     }
 
     @After
@@ -53,129 +92,15 @@ public class RegUserLoginRetailWeek {
         driver.navigate().refresh();
     }
 
-    @Test
-     public void checkCanLoginWithRegUserDetails(){
-        assertThat(driver.getCurrentUrl(),is(baseURL));
-
-        String mainWindowHandle = driver.getWindowHandle();
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
-                "div[id='colmain']")));
-        rwBottomNavItem = driver.findElement(By.cssSelector(
-                "li > a[href='http://www.retail-week.com/terms-and-conditions/']"));
-            assertThat(rwBottomNavItem.getText().toLowerCase(),containsString("conditions"));
-
-            signInLink = driver.findElement(By.partialLinkText(
-                    "Sign"));
-            signInLink.click();
-
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("wvPopupIframe")));
-
-        emailField = driver.findElement(By.cssSelector("input[id='SIemail']"));
-            emailField.clear();
-            emailField.sendKeys("jamestest4@freeolamail.com");
-
-        pwordField = driver.findElement(By.id("passWord"));
-            pwordField.clear();
-            pwordField.sendKeys("password");
-
-        assertTrue(driver.findElement(By.id("SIRememUserName")).isSelected());
-
-        loginButton = driver.findElement(By.id("LoginButton"));
-            loginButton.click();
-
-        assertTrue(driver.getWindowHandle().contentEquals(mainWindowHandle));
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
-                "a[class$='loggedIn']")));
-
-        assertTrue(driver.findElement(By.cssSelector(
-                "a[class$='loggedIn']")).isDisplayed());
-
-    }
 
     @Ignore
     public void checkTempIDCookieValue(){
-        assertThat(driver.getCurrentUrl(),is(baseURL));
-
-        String mainWindowHandle = driver.getWindowHandle();
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
-                "div[id='colmain']")));
-        rwBottomNavItem = driver.findElement(By.cssSelector(
-                "li > a[href='http://www.retail-week.com/terms-and-conditions/']"));
-        assertThat(rwBottomNavItem.getText().toLowerCase(),containsString("conditions"));
-
-        signInLink = driver.findElement(By.partialLinkText(
-                "Sign"));
-        signInLink.click();
-
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("wvPopupIframe")));
-
-        emailField = driver.findElement(By.cssSelector("input[id='SIemail']"));
-        emailField.clear();
-        emailField.sendKeys("jamestest4@freeolamail.com");
-
-        pwordField = driver.findElement(By.id("passWord"));
-        pwordField.clear();
-        pwordField.sendKeys("password");
-
-        assertTrue(driver.findElement(By.id("SIRememUserName")).isSelected());
-
-        loginButton = driver.findElement(By.id("LoginButton"));
-        loginButton.click();
-
-        assertTrue(driver.getWindowHandle().contentEquals(mainWindowHandle));
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
-                "a[class$='loggedIn']")));
-
-        assertTrue(driver.findElement(By.cssSelector(
-                "a[class$='loggedIn']")).isDisplayed());
-
         //check for value 0 in tempID
 
-    }
     }
 
     @Test
     public void checkEmapAuthCookiePresent(){
-        assertThat(driver.getCurrentUrl(),is(baseURL));
-
-        String mainWindowHandle = driver.getWindowHandle();
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
-                "div[id='colmain']")));
-        rwBottomNavItem = driver.findElement(By.cssSelector(
-                "li > a[href='http://www.retail-week.com/terms-and-conditions/']"));
-        assertThat(rwBottomNavItem.getText().toLowerCase(),containsString("conditions"));
-
-        signInLink = driver.findElement(By.partialLinkText(
-                "Sign"));
-        signInLink.click();
-
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("wvPopupIframe")));
-
-        emailField = driver.findElement(By.cssSelector("input[id='SIemail']"));
-        emailField.clear();
-        emailField.sendKeys("jamestest4@freeolamail.com");
-
-        pwordField = driver.findElement(By.id("passWord"));
-        pwordField.clear();
-        pwordField.sendKeys("password");
-
-        assertTrue(driver.findElement(By.id("SIRememUserName")).isSelected());
-
-        loginButton = driver.findElement(By.id("LoginButton"));
-        loginButton.click();
-
-        assertTrue(driver.getWindowHandle().contentEquals(mainWindowHandle));
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
-                "a[class$='loggedIn']")));
-
-        assertTrue(driver.findElement(By.cssSelector(
-                "a[class$='loggedIn']")).isDisplayed());
 
         assertThat(driver.manage().getCookieNamed("emapauth"), notNullValue());
 
