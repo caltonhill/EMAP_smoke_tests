@@ -1,24 +1,27 @@
-package jamestests.Logged_In_User_Tests;
+package jamestests.Logged_In_User_Tests.RegisteredUsers.Cookies;
 
 
 
 import org.junit.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class RegUserLoginRetailWeek {
+public class RegUserLoginRetailWeekCookiesTest {
     private static WebDriver driver;
     private static WebDriverWait wait;
     private static String baseURL="http://www.retail-week.com/";
@@ -29,6 +32,7 @@ public class RegUserLoginRetailWeek {
 
     private String loginEmail = "jamestest4@freeolamail.com";
     private String loginPassword = "password";
+    private String userSubsID = "5014646";
     private WebElement rwBottomNavItem;
 
     @BeforeClass
@@ -62,11 +66,11 @@ public class RegUserLoginRetailWeek {
 
         emailField = driver.findElement(By.cssSelector("input[id='SIemail']"));
         emailField.clear();
-        emailField.sendKeys("jamestest4@freeolamail.com");
+        emailField.sendKeys(loginEmail);
 
         pwordField = driver.findElement(By.id("passWord"));
         pwordField.clear();
-        pwordField.sendKeys("password");
+        pwordField.sendKeys(loginPassword);
 
         assertTrue(driver.findElement(By.id("SIRememUserName")).isSelected());
 
@@ -92,18 +96,41 @@ public class RegUserLoginRetailWeek {
         driver.navigate().refresh();
     }
 
-
-    @Ignore
-    public void checkTempIDCookieValue(){
-        //check for value 0 in tempID
-
-    }
-
     @Test
     public void checkEmapAuthCookiePresent(){
 
         assertThat(driver.manage().getCookieNamed("emapauth"), notNullValue());
 
+    }
+
+    @Test
+    public void checkSingleSignOnCookieValue(){
+
+        assertThat(driver.manage().getCookieNamed("tempid")
+                .getValue(),containsString("|0|"));
+
+    }
+
+    @Test
+    public void checkRememberMeCookiePresent(){
+
+        assertThat(driver.manage().getCookieNamed(".ASPXAUTH"), notNullValue());
+        assertThat(driver.manage().getCookieNamed(".ASPXAUTH").getDomain()
+                , is("www.retail-week.com"));
+
+/*   TODO: work out how to check cookie expiry date is correct. Need to get current date/time
+/        add 1 month(?), compare to cookie expiry?
+*/
+    }
+
+    @Test
+    public void checkConcurrencyCookieNotPresentForRegUser(){
+        assertThat(driver.manage().getCookieNamed("SSOEX"+userSubsID), nullValue());
+    }
+
+    @Test
+    public void checkCookieAcceptanceCookiePresent(){
+        assertThat(driver.manage().getCookieNamed("HasVisited"), notNullValue());
     }
 
 
