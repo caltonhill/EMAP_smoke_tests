@@ -1,4 +1,4 @@
-package james_tests.logged_in_user_tests._.subscribers;
+package james_tests.subscribers;
 
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -38,12 +38,11 @@ public class HsjSubscriberLoginThroughBarrierTest {
         // ERROR: Caught exception [Error: locator strategy either id or name must be specified explicitly.]
         driver.findElement(By.id("SIemail")).clear();
         driver.findElement(By.id("SIemail")).sendKeys("jamestest4@freeolamail.com");
-        driver.findElement(By.id("SubsLoginEmail")).click();
         driver.findElement(By.id("passWord")).clear();
         driver.findElement(By.id("passWord")).sendKeys("password");
         driver.findElement(By.id("LoginButton")).click();
+
         // Confirms Related Articles heading present
-        // Warning: verifyTextPresent may require manual changes
         try {
             assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*$"));
         } catch (Error e) {
@@ -61,10 +60,6 @@ public class HsjSubscriberLoginThroughBarrierTest {
     @After
     public void tearDown() throws Exception {
         driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }
     }
 
     private boolean isElementPresent(By by) {

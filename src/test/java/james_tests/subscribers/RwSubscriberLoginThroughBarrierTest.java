@@ -1,4 +1,4 @@
-package james_tests.logged_in_user_tests._.subscribers;
+package james_tests.subscribers;
 
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -63,10 +63,6 @@ public class RwSubscriberLoginThroughBarrierTest {
     @After
     public void tearDown() throws Exception {
         driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }
     }
 
     private boolean isElementPresent(By by) {
