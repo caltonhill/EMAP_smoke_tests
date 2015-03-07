@@ -6,3 +6,5 @@ Held in an IntelliJ project using Maven.
 
 Sites used are those of my former employer EMAP.
 This automation code is available to EMAP at any time should they wish to make use of it.
+
+-----------
